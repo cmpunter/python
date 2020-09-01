@@ -59,7 +59,7 @@ class AM2320:
             self.temperature = None
 
 am2320 = AM2320()
-am2320.read()
+am2320.measure()
 
 if am2320.humidity is not None:
     print("humidity : %.1f%%" % am2320.humidity)
