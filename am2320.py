@@ -38,7 +38,7 @@ class AM2320:
                     crc >>= 1
         return crc
 
-    def read(self):
+    def measure(self):
         try:
             self.bus.write_byte(self.address, 0)
         except OSError:
