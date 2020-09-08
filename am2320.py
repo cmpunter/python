@@ -51,7 +51,7 @@ class AM2320:
 
         crc = self._crc16(data[:6])
         
-        if crc == (data[7] << 8) | data[6]:
+        if crc == (data[-1] << 8) | data[-2]:
             self.humidity = ((data[2] << 8) | data[3]) / 10.0
             self.temperature = ((data[4] << 8) | data[5]) / 10.0
         else:
